@@ -1,21 +1,35 @@
-/**index.wxss**/
-.userinfo {
+/*!**index.wxss**!*/
+/*.userinfo {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+/*}*/
+
+/*.userinfo-avatar {*/
+  /*width: 128rpx;*/
+  /*height: 128rpx;*/
+  /*margin: 20rpx;*/
+  /*border-radius: 50%;*/
+/*}*/
+
+/*.userinfo-nickname {*/
+  /*color: #aaa;*/
+/*}*/
+
+/*.usermotto {*/
+  /*margin-top: 200px;*/
+/*}*/
+
+.selectbar {
+  position: fixed;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  bottom: 0;
+  height: 125rpx;
+  background-color: red;
+  width: 750rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.selectbar .selectBtn {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 125rpx;
 }
