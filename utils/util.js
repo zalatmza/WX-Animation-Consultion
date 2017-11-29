@@ -14,6 +14,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const https2http = url => url.replace(/^https?/ ,'http')
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  https2http: https2http
 }

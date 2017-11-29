@@ -1,18 +1,47 @@
-<!--&lt;!&ndash;index.wxml&ndash;&gt;-->
-<!--<view class="container">-->
-  <!--<view class="userinfo">-->
-    <!--<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
-    <!--<block wx:else>-->
-      <!--<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>-->
-      <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
-    <!--</block>-->
-  <!--</view>-->
-  <!--<view class="usermotto">-->
-    <!--<text class="user-motto">{{motto}}</text>-->
-  <!--</view>-->
-<!--</view>-->
 <view class="container">
-  <view class="selectbar">
-    <view class="selectBtn" wx:for="{{categoriesList}}" wx:key="{{id}}" wx:for-item="listItem"  wx:for-index="id">{{listItem.name}}</view>
+  <view class="select-bar">
+    <view class="select-btn"
+          wx:for="{{categoriesList}}"
+          wx:key="{{id}}"
+          wx:for-item="listItem"
+          wx:for-index="id">
+      <text class="{{activeID === listItem.id ? 'active' : ''}}">{{listItem.name}}</text>
+    </view>
+  </view>
+  <view class="info-wrap">
+    <view class="list-item"
+
+          wx:for="{{infoList}}"
+          wx:key="item{{index}}">
+      <view class="rank">{{1 + index}}</view>
+      <view class="info">
+        <view class="title">{{item.title}}</view>
+        <view class="user-header f-25rpx">
+          <view class="author">作者:</view>
+          <image src="{{item.author.face}}@50w_50h.jpg"></image>
+          <view class="user-name">{{item.author.name}}</view>
+        </view>
+        <view class="banner" wx:if="{{item.banner_url}}">
+          <image class="banner-cover" src="{{item.banner_url}}" mode="aspectFill"></image>
+        </view>
+        <view class="summary f-25rpx">{{item.summary}}......</view>
+        <view class="card-info f-25rpx">
+          <view class="card-p">
+            <view class="card-class">分类：{{item.category.name}}</view>
+            <view class="card-view">浏览数：{{item.stats.view}}</view>
+          </view>
+          <view class="card-p">
+            <view class="card-like">点赞数：{{item.stats.like}}</view>
+            <view class="card-comment">评论数：{{item.stats.reply}}</view>
+            <view class="card-score">评分：
+              <text class="score">{{item.score}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="info-bottom">
+      再拉也没更多了
+    </view>
   </view>
 </view>
