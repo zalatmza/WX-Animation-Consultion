@@ -20,6 +20,7 @@ Page({
   onLoad () {
     this.getUserInfo()
     this.getCategories()
+    this.test()
   },
   // 获取用户信息
   getUserInfo () {
@@ -79,6 +80,11 @@ Page({
         mask: true,
         title: res.message
       })
+    })
+  },
+  test () {
+    wx.navigateTo({
+      url: '../detail/detail?cvid=78831'
     })
   }
 })

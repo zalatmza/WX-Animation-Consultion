@@ -10,7 +10,6 @@
   </view>
   <view class="info-wrap">
     <view class="list-item"
-
           wx:for="{{infoList}}"
           wx:key="item{{index}}">
       <view class="rank">{{1 + index}}</view>
