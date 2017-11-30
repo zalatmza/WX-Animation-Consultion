@@ -1,6 +1,13 @@
 view,text {
   color: #99A2AA;
 }
+.container {
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+}
 .f-25rpx {
   font-size: 25rpx;
 }
