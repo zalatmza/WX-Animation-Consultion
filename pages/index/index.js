@@ -89,7 +89,7 @@ Page({
   },
   jumpToDetail(event) {
     wx.navigateTo({
-      url: `https://www.bilibili.com/read/cv${event.currentTarget.dataset.id}`
+      url: `../detail/detail?cvid=${event.currentTarget.dataset.cvid}`
     })
   }
 })
