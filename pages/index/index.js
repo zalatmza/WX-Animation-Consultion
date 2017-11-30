@@ -84,7 +84,7 @@ Page({
   },
   test () {
     wx.navigateTo({
-      url: '../detail/detail?cvid=78831'
+      url: '../detail/detail?cvid=76784'
     })
   }
 })

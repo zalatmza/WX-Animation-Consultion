@@ -13,6 +13,7 @@
  */
 
 var __placeImgeUrlHttps = "https";
+var __placeImgeUrlHttp = "http";
 var __emojisReg = '';
 var __emojisBaseSrc = '';
 var __emojis = {};
@@ -109,14 +110,14 @@ function html2json(html, bindName) {
                     var name = attr.name;
                     var value = attr.value;
                     if (name == 'class') {
-                        console.dir(value);
+                        // console.dir(value);
                         //  value = value.join("")
                         node.classStr = value;
                     }
                     // has multi attibutes
                     // make it array of attribute
                     if (name == 'style') {
-                        console.dir(value);
+                        // console.dir(value);
                         //  value = value.join("")
                         node.styleStr = value;
                     }
@@ -147,11 +148,11 @@ function html2json(html, bindName) {
             //对img添加额外数据
             if (node.tag === 'img') {
                 node.imgIndex = results.images.length;
-                var imgUrl = node.attr.src || node.attr['data-src'];
+                var imgUrl = node.attr.src == undefined ? node.attr['data-src'] : node.attr.src;
                 if (imgUrl[0] == '') {
                     imgUrl.splice(0, 1);
                 }
-                imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+                imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttp);
                 node.attr.src = imgUrl;
                 node.from = bindName;
                 results.images.push(node);

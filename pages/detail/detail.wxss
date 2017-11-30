@@ -1,1 +1,22 @@
 @import "../../wxParse/wxParse.wxss";
+
+.article-holder {
+    padding: 15rpx 20rpx;
+    font-size: 30rpx;
+}
+.article-holder view {
+    word-break: break-all;
+    color: #222;
+    line-height: 40rpx;
+}
+.img-box {
+    text-align: center;
+    margin: 15rpx 0;
+}
+.wxParse-p > view:first-child {
+    text-indent: 60rpx;
+}
+.wxParse-figcaption > view {
+    font-size: 25rpx;
+    color: #999;
+}

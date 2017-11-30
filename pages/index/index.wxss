@@ -98,7 +98,7 @@ view,text {
 }
 .banner .banner-cover {
   width: 100%;
-  height: 200rpx;
+  height: 300rpx;
 }
 /*信息*/
 .card-info .card-p {

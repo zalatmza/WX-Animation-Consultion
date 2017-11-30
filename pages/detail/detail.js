@@ -14,8 +14,7 @@ Page({
       method: 'GET',
       dataType: 'text',
       success (res) {
-        let html = res.data.match(/<div class="article-holder"><p>.*<\/p><\/div>/)[0]
-        // let html = '<div>asdasd</div>'
+        let html = res.data.match(/<div class="article-holder">.*<\/div>/)[0]
         console.log(html)
         WxParse.wxParse('article', 'html', html, _this);
       }
