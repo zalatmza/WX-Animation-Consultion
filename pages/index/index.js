@@ -9,7 +9,8 @@ Page({
     userInfo: {},
     categoriesList: [],
     infoList: [],
-    activeID: 0
+    activeID: 0,
+    scrollTop: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -20,7 +21,6 @@ Page({
   onLoad () {
     this.getUserInfo()
     this.getCategories()
-    this.test()
   },
   // 获取用户信息
   getUserInfo () {
@@ -60,6 +60,7 @@ Page({
   },
   // 更新展示列表
   updateList (cid) {
+    if (cid === this.data.activeID) { return }
     let opts = {
       url: 'https://api.bilibili.com/x/article/rank/list',
       data: {
@@ -73,7 +74,8 @@ Page({
       })
       this.setData({
         infoList: res,
-        activeID: cid
+        activeID: cid,
+        scrollTop: 0
       })
     }).catch(res => {
       wx.showToast({
@@ -82,9 +84,12 @@ Page({
       })
     })
   },
-  test () {
+  cutList (event) {
+    this.updateList(event.currentTarget.dataset.cid)
+  },
+  jumpToDetail(event) {
     wx.navigateTo({
-      url: '../detail/detail?cvid=76784'
+      url: `../detail/detail?cvid=${event.currentTarget.dataset.cvid}`
     })
   }
 })

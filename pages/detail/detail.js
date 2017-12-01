@@ -9,6 +9,10 @@ Page({
   },
   onLoad (option) {
     let _this = this
+    wx.showLoading({
+      mask: true,
+      title: 'loading'
+    })
     wx.request({
       url: `https://www.bilibili.com/read/cv${option.cvid}`,
       method: 'GET',
@@ -16,6 +20,7 @@ Page({
       success (res) {
         let html = res.data.match(/<div class="article-holder">.*<\/div>/)[0]
         WxParse.wxParse('article', 'html', html, _this);
+        wx.hideLoading()
       }
     })
   }
