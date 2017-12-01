@@ -18,7 +18,7 @@ Page({
       method: 'GET',
       dataType: 'text',
       success (res) {
-        let html = res.data.match(/<div class="article-holder">.*<\/div>/)[0]
+        let html = res.data.match(/<div class="article-holder">([\s\S])*?<\/div>/)[0]
         WxParse.wxParse('article', 'html', html, _this);
         wx.hideLoading()
       }

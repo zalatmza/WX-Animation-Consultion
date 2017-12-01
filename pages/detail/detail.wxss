@@ -7,7 +7,7 @@
 .article-holder view {
     word-break: break-all;
     color: #222;
-    line-height: 40rpx;
+    line-height: 45rpx;
 }
 .img-box {
     text-align: center;

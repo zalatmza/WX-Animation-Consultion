@@ -68,6 +68,10 @@ Page({
       },
       method: 'GET',
     }
+    wx.showLoading({
+      mask: true,
+      title: 'loading'
+    })
     http(opts).then(res => {
       res.forEach(value => {
         value.banner_url = https2http(value.banner_url)
@@ -77,6 +81,7 @@ Page({
         activeID: cid,
         scrollTop: 0
       })
+      wx.hideLoading()
     }).catch(res => {
       wx.showToast({
         mask: true,
